@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+    <script>
+        const liffId = '1654326339-3vzLb8xo'; 
+        const targetUrl = 'https://advice.ezmember.org/_chackproducts/index1.php';
+
+        async function main() {
+            try {
+                await liff.init({ liffId: liffId });
+                
+                if (liff.isInClient()) {
+                    liff.openWindow({
+                        url: targetUrl,
+                        external: true
+                    });
+                } else {
+                    window.location.href = targetUrl;
+                }
+            } catch (err) {
+                console.error(err);
+                 window.location.href = targetUrl;
+            }
+        }
+        main();
+    </script>
+</body>
+</html>
